@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <style>
+        
+           /* 10px → offset-x → shadow moves 10px right from the element,-10px will moves the shadow to left of the element. 
+              20px → offset-y → shadow moves 10px down from the element, same as offset-x.
+              3px → blur-radius → how soft/blurred the shadow looks.
+              5px → spread-radius → makes shadow bigger (positive) or smaller (negative). */
+
+ /* box-shadow: 10px 20px 3px 5px rgb(170, 170, 197); */
+            /* inset means flips the shadow inside the element instead of outside.
+            normally shadow will show on right and bottom but inset will show it on top and left. */
+
+ /* box-shadow:inset 10px 10px rgb(210, 99, 99); */
+    
+
+        body{
+            margin:0px;
+            background-color:skyblue;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+
+        /* Creating a sun effect */
+        .sun{
+            height:300px;
+            width:300px;
+            border-radius:50%;
+            background-color:yellow;
+            box-shadow: 
+              0 0 50px 20px rgba(255, 255, 0, 0.7),
+              0 0 100px 40px rgba(255, 255, 0, 0.5),
+              0 0 200px 60px rgba(255, 255, 0, 0.3);
+        }
+
+         /* 
+        MEDIA QUERIES → used for responsiveness
+        They apply styles depending on screen size.
+
+        @media screen and (max-width:480px) → 
+        means "if screen is 480px or smaller (like small phones) apply this style".
+        */
+
+        /* for smart phones */
+        @media screen and (max-width:480px)
+        {
+            .sun{
+                height:120px;
+                width:120px;
+            }
+        }
+
+        /* For tablets */
+        @media screen and (max-width:768px)
+        {
+            .sun{
+                height:180px;
+                width:180px;
+            }
+        }
+   
+        /* for Desktop and laptops */
+        @media screen and (max-width:1200px)
+        {
+            .sun{
+                height:250px;
+                width:250px;
+            }
+        }
+       
+        /* For large Screens */
+        @media screen and (min-width: 1201px) {
+            .sun {
+               width: 300px;
+               height: 300px;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="sun"></div>
+    
+</body>
+</html>
